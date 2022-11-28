@@ -47,5 +47,13 @@ export const StyledHeader = styled.header`
     div {
       flex-direction: column;
     }
+
+    form{
+      width: 100%;
+    }
+
+    .divForm {
+      width: 100%;
+    }
   }
 `;

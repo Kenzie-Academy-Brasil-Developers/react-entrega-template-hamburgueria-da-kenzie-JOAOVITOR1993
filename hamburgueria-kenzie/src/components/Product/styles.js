@@ -58,4 +58,8 @@ export const StyledProduct = styled.li`
       transition: 0.6s;
     }
   }
+
+  @media (max-width: 768px) {
+    min-width: 15.75rem;
+  }
 `;

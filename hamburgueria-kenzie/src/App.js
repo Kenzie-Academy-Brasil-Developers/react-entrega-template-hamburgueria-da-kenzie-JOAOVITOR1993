@@ -39,7 +39,7 @@ const App = () => {
         return element;
       }
     });
-    setProductsFilter(productsFilter)
+    setProductsFilter(productsFilter);
   };
 
   const handleClick = (productId) => {
@@ -51,16 +51,15 @@ const App = () => {
 
     const productCart = currentSale.find((element) => {
       if (element.id === productId) {
-        return element
+        return element;
       }
-  })
+    });
 
-    if(!productCart){
-      setCurrentSale([...currentSale, productFind])
-    }else{
-      showMenssageError()
+    if (!productCart) {
+      setCurrentSale([...currentSale, productFind]);
+    } else {
+      showMenssageError();
     }
-   
   };
 
   const showMenssageError = () => {
@@ -76,18 +75,30 @@ const App = () => {
     setCurrentSale(productsCartFilter);
   };
 
+  const removeAllProductsCart = () => {
+    setCurrentSale([]);
+  };
+
   return (
     <div className="App">
-      <Header 
-      showProducts={showProducts} 
-      filteredProducts={filteredProducts} 
-      setFilteredProducts={setFilteredProducts}
+      <Header
+        showProducts={showProducts}
+        filteredProducts={filteredProducts}
+        setFilteredProducts={setFilteredProducts}
       />
       <StyleDivApp className="container">
-        <ProductsList productsFilter={productsFilter} products={products} handleClick={handleClick} />
-        <Cart currentSale={currentSale} removeProductCart={removeProductCart} />
+        <ProductsList
+          productsFilter={productsFilter}
+          products={products}
+          handleClick={handleClick}
+        />
+        <Cart
+          currentSale={currentSale}
+          removeProductCart={removeProductCart}
+          removeAllProductsCart={removeAllProductsCart}
+        />
       </StyleDivApp>
-        <ToastContainer autoClose={3000} />
+      <ToastContainer autoClose={3000} />
     </div>
   );
 };

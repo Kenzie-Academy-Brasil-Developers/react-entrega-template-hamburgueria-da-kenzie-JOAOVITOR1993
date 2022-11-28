@@ -3,7 +3,7 @@ import { CartTotal } from "../CartTotal";
 import { StyledCart } from "./styles";
 import menssageNoProducts from "../../../src/img/menssageNoProducts.svg";
 
-export const Cart = ({ currentSale, removeProductCart }) => {
+export const Cart = ({ currentSale, removeProductCart, removeAllProductsCart }) => {
   return (
     <StyledCart>
       <h2>Carrinho de compras</h2>
@@ -28,7 +28,7 @@ export const Cart = ({ currentSale, removeProductCart }) => {
           </figure>
         )}
       </ul>
-      {currentSale.length !== 0 && <CartTotal currentSale={currentSale} />}
+      {currentSale.length !== 0 && <CartTotal currentSale={currentSale} removeAllProductsCart={removeAllProductsCart}/>}
     </StyledCart>
   );
 };

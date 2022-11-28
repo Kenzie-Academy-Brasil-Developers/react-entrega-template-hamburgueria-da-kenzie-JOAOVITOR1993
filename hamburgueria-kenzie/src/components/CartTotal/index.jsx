@@ -1,7 +1,7 @@
 import { Button } from "../Button";
 import { StyledCart } from "./styles";
 
-export const CartTotal = ({ currentSale }) => {
+export const CartTotal = ({ currentSale, removeAllProductsCart }) => {
   const total = () => {
     const prices = currentSale.map((element) => {
       return element.price;
@@ -22,7 +22,7 @@ export const CartTotal = ({ currentSale }) => {
       <Button
         type={"button"}
         name={"Remover Todos"}
-        onClick={() => console.log("função remover todos")}
+        onClick={() => removeAllProductsCart()}
       />
     </StyledCart>
   );
