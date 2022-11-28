@@ -33,8 +33,8 @@ const App = () => {
       const productCategoryList = element.category.toLowerCase();
 
       if (
-        productNameList === productNameInput ||
-        productCategoryList === productNameInput
+        productNameList.includes(productNameInput) ||
+        productCategoryList.includes(productNameInput)
       ) {
         return element;
       }
