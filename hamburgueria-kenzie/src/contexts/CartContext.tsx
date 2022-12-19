@@ -76,7 +76,8 @@ export const CartProvider = () => {
   }
 
   const handleClick = (productId: number) => {
-    const productFind = products.find((element) => {
+    
+    const productFind= products.find((element) => {
       if (element.id === productId) {
         return element;
       }
@@ -88,7 +89,7 @@ export const CartProvider = () => {
       }
     });
   
-    if (!productCart) {
+    if (!productCart && productFind !== undefined) {
       setCurrentSale([...currentSale, productFind]);
     } else {
       toast.error("Ops! O produto já foi selecionado");
