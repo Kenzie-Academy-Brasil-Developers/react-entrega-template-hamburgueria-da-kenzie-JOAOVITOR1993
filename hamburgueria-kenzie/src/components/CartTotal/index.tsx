@@ -1,18 +1,11 @@
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import { Button } from "../Button";
 import { StyledCart } from "./styles";
 
-export const CartTotal = ({ currentSale, removeAllProductsCart }) => {
-  const total = () => {
-    const prices = currentSale.map((element) => {
-      return element.price;
-    });
-
-    const totalPrice = prices.reduce((acc, cur) => {
-      return acc + cur;
-    }, 0);
-    return totalPrice;
-  };
-
+export const CartTotal = () => {
+  const { removeAllProductsCart, total } = useContext(CartContext)
+ 
   return (
     <StyledCart>
       <div>

@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
 }
 
 :root {
@@ -23,14 +24,14 @@ export const GlobalStyle = createGlobalStyle`
   
   --font-size-0: 1.62rem;
   --font-size-1: 1.37rem;
-  --font-size-2: 1.12rem;
+  --font-size-2: 1rem;
   --font-size-3: 0.87rem;
   --font-size-4: 0.75rem;
 
-  --radius: 5px;
+  --radius: 8px;
 }
 
-h1, h2, h3, h4, h5, p, a, span, button, input{
+h1, h2, h3, h4, h5, p, a, span, button, input, label{
     font-family: 'Inter', sans-serif;
     color: var(--color-grey-100);
 }
@@ -42,6 +43,9 @@ h1, h2, h3, h4, h5, p, a, span, button, input{
   padding: 0 1rem;
 }
 
-
+.pError{
+  font-weight: var(--font-size-4);
+  color: var(--color-secondary);
+}
 
 `
