@@ -5,10 +5,36 @@ export const StyledHeader = styled.header`
   background-color: var(--color-grey-1);
   margin-bottom: 1.93rem;
 
-  div {
+  div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.43rem;
+  }
+
+  div:nth-child(2) > button {
+    width: 1.56rem;
+    height: 1.56rem;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    transition: 0.6s;
+  }
+
+  div:nth-child(2) > button:hover {
+    transform: scale(1.3);
+    transition: 0.6s;
+  }
+
+  div:nth-child(2) > button figure img {
+    width: 100%;
+    height: 100%;
   }
 
   figure img {
@@ -30,30 +56,40 @@ export const StyledHeader = styled.header`
   }
 
   form button {
-    border-radius: 8px;
+    border-radius: var(--radius);
     width: 6.68rem;
     height: 2.5rem;
     background-color: var(--color-primary);
     color: var(--color-grey-0);
     transition: 0.6s;
+  }
 
-    :hover {
-      background-color: var(--color-primary-50);
-      transition: 0.6s;
-    }
+  form button:hover {
+    background-color: var(--color-primary-50);
+    transition: 0.6s;
   }
 
   @media (max-width: 768px) {
-    div {
+    div:nth-child(1) {
       flex-direction: column;
     }
 
-    form{
+    form {
       width: 100%;
     }
 
     .divForm {
       width: 100%;
     }
+  }
+`;
+
+export const StyledInputSearch = styled.input`
+  border: transparent;
+  height: 2.5rem;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
