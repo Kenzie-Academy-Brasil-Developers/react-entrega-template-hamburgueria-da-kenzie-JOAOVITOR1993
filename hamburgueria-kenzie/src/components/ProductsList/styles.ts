@@ -4,12 +4,13 @@ export const StyledProductList = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1.25rem;
-  width: 50rem;
+  gap: 3.3rem;
+  width: 100%;
   height: 45.93rem;
 
   @media (max-width: 768px) {
     flex-wrap: nowrap;
+    gap: 1.25rem;
     width: 100%;
     height: auto;
     overflow-x: auto;

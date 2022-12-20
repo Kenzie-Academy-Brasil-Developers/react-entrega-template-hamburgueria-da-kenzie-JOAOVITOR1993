@@ -7,8 +7,8 @@ import { Input } from "../../components/Input";
 import { UserContext } from "../../contexts/UserContext";
 import { registerSchema } from "./registerSchema";
 import { StyledDivRegister, StyledRegister } from "./styles";
-import imgLogin from "../../img/imgLogin.png"
-import imgLoginMobile from "../../img/imgLoginMobile.png"
+import imgLogin from "../../img/imgLogin.png";
+import imgLoginMobile from "../../img/imgLoginMobile.png";
 
 interface iRegisterForm {
   name: string;
@@ -35,8 +35,12 @@ export const Register = () => {
 
   return (
     <StyledDivRegister className="container">
-      <figure className="imgLogin"><img src={imgLogin} alt="" /></figure>
-      <figure className="imgLoginMobile"><img src={imgLoginMobile} alt="" /></figure>
+      <figure className="imgLogin">
+        <img src={imgLogin} alt="" />
+      </figure>
+      <figure className="imgLoginMobile">
+        <img src={imgLoginMobile} alt="" />
+      </figure>
       <StyledRegister noValidate onSubmit={handleSubmit(onSubmitFormRegister)}>
         <div>
           <h1>Cadastro</h1>

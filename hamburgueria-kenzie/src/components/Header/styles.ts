@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  padding: 0.62rem 0;
+  padding: 1.5rem 0;
   background-color: var(--color-grey-1);
   margin-bottom: 1.93rem;
 
-  div:nth-child(1) {
+  > div {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,6 +32,26 @@ export const StyledHeader = styled.header`
     transition: 0.6s;
   }
 
+  .btnSearch {
+    display: none;
+  }
+
+  .btnCartQtd {
+    position: relative;
+  }
+
+  .btnCartQtd p {
+    padding: 0.31rem 0.3rem;
+    border-radius: var(--radius);
+    background-color: var(--color-primary);
+    color: var(--color-grey-0);
+    font-size: var(--font-size-3);
+    font-weight: 900;
+    position: absolute;
+    right: -12px;
+    top: -16px;
+  }
+
   div:nth-child(2) > button figure img {
     width: 100%;
     height: 100%;
@@ -48,6 +68,11 @@ export const StyledHeader = styled.header`
     border: solid 2px var(--color-grey-20);
     border-radius: 8px;
     width: 20rem;
+    display: block;
+  }
+
+  .divFormMobile {
+    display: none;
   }
 
   form {
@@ -69,9 +94,21 @@ export const StyledHeader = styled.header`
     transition: 0.6s;
   }
 
+  .btnSearchMobile{
+    width: 3.31rem;
+    height: 2.5rem;
+    border: transparent;
+    cursor: pointer;
+  }
+
+  .btnSearchMobile figure img{
+    width: 1rem;
+  }
+
   @media (max-width: 768px) {
-    div:nth-child(1) {
-      flex-direction: column;
+
+    .btnSearch {
+      display: block;
     }
 
     form {
@@ -80,6 +117,38 @@ export const StyledHeader = styled.header`
 
     .divForm {
       width: 100%;
+      display: none;
+    }
+
+    .divBackFormMobile {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      width: 100%;
+      height: 5rem;
+      padding: 0 1rem;
+      background-color: var(--color-grey-1);
+    }
+
+    .divFormMobile {
+      padding: 0.62rem;
+      background-color: var(--color-grey-0);
+      border: solid 2px var(--color-grey-20);
+      border-radius: 8px;
+      width: 100%;
+      display: block;
+    }
+  }
+
+  @media (max-width: 320px) {
+    > div {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .divBackFormMobile{
+      height: 8rem;
+      justify-content: center;
     }
   }
 `;
@@ -92,4 +161,5 @@ export const StyledInputSearch = styled.input`
   @media (max-width: 768px) {
     width: 100%;
   }
+
 `;

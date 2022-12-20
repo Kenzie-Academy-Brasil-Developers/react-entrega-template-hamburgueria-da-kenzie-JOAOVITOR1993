@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext } from "react";
 import { StyledDivLogin, StyledLogin } from "./styles";
-import imgLogin from "../../img/imgLogin.png"
-import imgLoginMobile from "../../img/imgLoginMobile.png"
+import imgLogin from "../../img/imgLogin.png";
+import imgLoginMobile from "../../img/imgLoginMobile.png";
 
 interface iLoginForm {
   email: string;
@@ -54,11 +54,17 @@ export const Login = () => {
         {errors.password && <p className="pError">{errors.password.message}</p>}
 
         <Button type={"submit"} name={"Logar"} />
-        <p className="pLogin">Crie sua conta para saborear muitas delícias e matar sua fome!</p>
+        <p className="pLogin">
+          Crie sua conta para saborear muitas delícias e matar sua fome!
+        </p>
         <Link to={"/register"}>Cadastrar</Link>
       </StyledLogin>
-      <figure className="imgLogin"><img src={imgLogin} alt="" /></figure>
-      <figure className="imgLoginMobile"><img src={imgLoginMobile} alt="" /></figure>
+      <figure className="imgLogin">
+        <img src={imgLogin} alt="" />
+      </figure>
+      <figure className="imgLoginMobile">
+        <img src={imgLoginMobile} alt="" />
+      </figure>
     </StyledDivLogin>
   );
 };

@@ -4,8 +4,8 @@ import { Button } from "../Button";
 import { StyledCart } from "./styles";
 
 export const CartTotal = () => {
-  const { removeAllProductsCart, total } = useContext(CartContext)
- 
+  const { removeAllProductsCart, total } = useContext(CartContext);
+
   return (
     <StyledCart>
       <div>
