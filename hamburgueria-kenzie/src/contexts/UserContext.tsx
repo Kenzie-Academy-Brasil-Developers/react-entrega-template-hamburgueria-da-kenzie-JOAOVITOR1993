@@ -29,7 +29,6 @@ export const UserProvider = ({ children }: iUserContextProps) => {
   const [userLogin, setUserLogin] = useState(false);
   const [loading, setLoading] = useState(true);
 
-
   const onSubmitFormRegister = async (data: iData) => {
     try {
       const response = await api.post("/users", data);
@@ -69,7 +68,7 @@ export const UserProvider = ({ children }: iUserContextProps) => {
             Authorization: `Bearer ${token}`,
           },
         });
-        setUserLogin(true); 
+        setUserLogin(true);
         navigate("/home");
       } catch (error) {
         console.log(error);

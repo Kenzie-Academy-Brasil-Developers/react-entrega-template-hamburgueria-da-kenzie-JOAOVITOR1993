@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
   --color-primary:#27AE60;
   --color-primary-50: #93D7AF;
   --color-secondary:  #EB5757;
+
+  --color-background-modal: rgba(0, 0, 0, 0.2);
   
   --font-size-0: 1.62rem;
   --font-size-1: 1.37rem;

@@ -2,7 +2,7 @@ import { StyledButton } from "./styles";
 
 interface iButton{
   type: "button" | "submit" | "reset" 
-  name: string
+  name: string 
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 

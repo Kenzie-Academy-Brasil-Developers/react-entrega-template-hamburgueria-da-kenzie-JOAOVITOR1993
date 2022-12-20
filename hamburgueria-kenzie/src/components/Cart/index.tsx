@@ -6,16 +6,28 @@ import { CartContext } from "../../contexts/CartContext";
 import { Button } from "../Button";
 
 export const Cart = () => {
-  const { currentSale, removeProductCart } =
-    useContext(CartContext);
+  const {
+    currentSale,
+    removeProductCart,
+    setOpenModalCart,
+    addQtdProductCart,
+    removeQtdProductCart,
+  } = useContext(CartContext);
 
   return (
     <StyledCart>
-      <h2>Carrinho de compras</h2>
+      <div className="divHeader">
+        <h2>Carrinho de compras</h2>
+        <Button
+          type={"button"}
+          name={"X"}
+          onClick={() => setOpenModalCart(false)}
+        />
+      </div>
       <ul>
         {currentSale.length !== 0 ? (
           currentSale.map((element, index) => {
-            const { id, name, category, img } = element;
+            const { id, name, img, qtd } = element;
             return (
               <StyledCartProduct key={index}>
                 <div>
@@ -24,7 +36,13 @@ export const Cart = () => {
                   </figure>
                   <div>
                     <h3>{name}</h3>
-                    <p>{category}</p>
+                    <div className="counterProduct">
+                      <button onClick={() => removeQtdProductCart(id)}>
+                        -
+                      </button>
+                      <p>{qtd}</p>
+                      <button onClick={() => addQtdProductCart(id)}>+</button>
+                    </div>
                   </div>
                 </div>
                 <Button
@@ -41,9 +59,7 @@ export const Cart = () => {
           </figure>
         )}
       </ul>
-      {currentSale.length !== 0 && (
-        <CartTotal/>
-      )}
+      {currentSale.length !== 0 && <CartTotal />}
     </StyledCart>
   );
 };

@@ -4,7 +4,7 @@ import { Button } from "../Button";
 import { StyledProduct, StyledProductList } from "./styles";
 
 export const ProductsList = () => {
-  const { productsFilter, products, handleClick } = useContext(CartContext);
+  const { productsFilter, products, addProductCart } = useContext(CartContext);
 
   return (
     <StyledProductList>
@@ -23,7 +23,7 @@ export const ProductsList = () => {
                   <Button
                     type={"button"}
                     name={"Adicionar"}
-                    onClick={() => handleClick(id)}
+                    onClick={() => addProductCart(id)}
                   />
                 </div>
               </StyledProduct>
@@ -43,7 +43,7 @@ export const ProductsList = () => {
                   <Button
                     type={"button"}
                     name={"Adicionar"}
-                    onClick={() => handleClick(id)}
+                    onClick={() => addProductCart(id)}
                   />
                 </div>
               </StyledProduct>
